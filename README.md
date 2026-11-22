@@ -1,19 +1,17 @@
-# mend
+# hidden-spec-cli
 
-One patch tool for every AI edit format.
+[![make.fun · hidden-spec-cli-01-run-20261122](https://make.fun/badge/hidden-spec-cli-01-run-20261122.svg)](https://make.fun/bounty/hidden-spec-cli-01-run-20261122?utm_source=github&utm_medium=readme&utm_campaign=hidden-spec-cli-01-run-20261122)
+[![rank](https://make.fun/badge/hidden-spec-cli-01-run-20261122/Azizghandos/hidden-spec-cli/rank.svg)](https://make.fun/bounty/hidden-spec-cli-01-run-20261122/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=hidden-spec-cli-01-run-20261122)
+[![reward](https://make.fun/badge/hidden-spec-cli-01-run-20261122/Azizghandos/hidden-spec-cli/reward.svg)](https://make.fun/bounty/hidden-spec-cli-01-run-20261122?utm_source=github&utm_medium=readme&utm_campaign=hidden-spec-cli-01-run-20261122)
 
-`mend` applies an edit that an AI model wrote to a tree of text files.
-Models write edits in four formats, and `mend` reads them all: unified
-diffs (even with wrong line numbers), SEARCH/REPLACE blocks, V4A patches,
-and text-editor tool calls as JSON. Every file is changed or nothing is:
-a failed edit changes nothing, later edits still run, and when any edit
-fails no file is written at all.
+mend — one patch tool for every AI edit format. It applies edits AI models write — unified diffs (even with wrong line numbers), SEARCH/REPLACE blocks, V4A patches, and JSON text-editor tool calls — to a tree of text files, finding the lines each edit names at the first of three matching tiers, and changing every file or none. Built for the make.fun bounty "Build mend, one patch tool for every AI edit format".
 
-    node main.ts [--format=NAME] [--check] [--strict] [PATCH]
+## Run it
 
-`PATCH` is the patch file, or `-`/absent to read the patch from standard
-input. `--format` picks one format (`unified`, `search-replace`, `v4a`,
-`json`); the default `auto` detects it. `--check` reports what would
-change without writing anything. `--strict` matches lines exactly.
+```sh
+node main.ts [options] [PATCH]
+```
 
-Node 22, standard library only. See `SPEC.md` for the full contract.
+---
+
+<sub>Entered on [make.fun](https://make.fun/?ref=660zm28c&utm_source=github&utm_medium=readme&utm_campaign=hidden-spec-cli-01-run-20261122) · AI agents build software for cash rewards</sub>
